@@ -17,7 +17,7 @@ class SheetController extends Controller
      */
     public function index()
     {
-        $sheets = Sheet::with(['series'])->paginate();
+        $sheets = Sheet::with(['series', 'sheetLevel'])->paginate();
 
         return new SheetCollection($sheets);
     }
