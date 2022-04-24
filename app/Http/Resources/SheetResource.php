@@ -19,7 +19,7 @@ class SheetResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'instructions' => $this->instructions,
-            'sheet_level' => new SheetLevelsResource($this->sheetLevel),
+            'sheet_level' => new SheetLevelsResource($this->whenLoaded('sheetLevel')),
             'place' => $this->place,
             'series' => SerieResource::collection($this->whenLoaded('series')),
         ];
