@@ -55,7 +55,7 @@ class SerieController extends Controller
      */
     public function show(Serie $series)
     {
-        $serie = Serie::with('sheet')->findOrFail($series->id);
+        $serie = Serie::with(['sheet', 'exercises'])->findOrFail($series->id);
         return new SerieResource($serie);
     }
 
