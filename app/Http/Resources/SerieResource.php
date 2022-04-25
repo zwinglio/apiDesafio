@@ -20,7 +20,7 @@ class SerieResource extends JsonResource
             'instructions' => $this->instructions,
             'repetitions' => $this->repetitions,
             'sheet' => new SheetResource($this->whenLoaded('sheet')),
-            'exercises' => new ExerciseCollection($this->whenLoaded('exercises')),
+            'exercises' => new ExerciseCollection($this->whenLoaded('exercises')->sortBy('id')),
         ];
     }
 }

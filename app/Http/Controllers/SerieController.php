@@ -18,12 +18,15 @@ class SerieController extends Controller
     public function index()
     {
         if (request()->has('sheet_id')) {
-            $series = Serie::with(['sheet', 'exercises'])->where('sheet_id', request()->sheet_id)->orderBy('id')->paginate();
+            $series = Serie::with(['sheet', 'exercises'])
+                ->where('sheet_id', request()->sheet_id)
+                ->orderBy('id')
+                ->paginate();
         } else {
-            $series = Serie::with(['sheet', 'exercises'])->orderBy('id')->paginate();
+            $series = Serie::with(['sheet', 'exercises'])
+                ->orderBy('id')
+                ->paginate();
         }
-
-        
 
         return new SerieCollection($series);
     }
@@ -52,7 +55,7 @@ class SerieController extends Controller
      */
     public function show(Serie $series)
     {
-        $serie = Serie::with('sheet')->findOrFail($series->id);
+        $serie = Serie::with(['sheet', 'exercises'])->findOrFail($series->id);
         return new SerieResource($serie);
     }
 
