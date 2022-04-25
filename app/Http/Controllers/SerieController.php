@@ -17,7 +17,7 @@ class SerieController extends Controller
      */
     public function index()
     {
-        $series = Serie::with(['sheet', 'exercises'])->paginate();
+        $series = Serie::with(['sheet', 'exercises'])->orderBy('id')->paginate();
 
         return new SerieCollection($series);
     }
