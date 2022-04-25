@@ -25,7 +25,7 @@ class StoreExerciseRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'instructions' => 'required|string|max:255',
+            'instructions' => 'string|max:255',
             'repetitions' => 'required|string',
             'serie_id'  => 'required|exists:series,id',
         ];
