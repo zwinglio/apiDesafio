@@ -1,0 +1,593 @@
+_type: export
+__export_format: 4
+__export_date: 2022-04-25T13:19:16.805Z
+__export_source: insomnia.desktop.app:v2021.7.2
+resources:
+  - _id: req_d23f838f96e842beae649e5f19a57ffc
+    parentId: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    modified: 1650848767670
+    created: 1650848497162
+    url: "{{ _.baseUrl }}/api/sheets"
+    name: index
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_ff5b9b391f6a43459b01850523e61ff7
+        name: sheet_level
+        value: intermediário
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1648812588412
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650849872907
+    created: 1650848245205
+    name: sheet
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650849255194
+    _type: request_group
+  - _id: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    parentId: null
+    modified: 1650848169184
+    created: 1650848169184
+    name: apiDesafio
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_ab1b4dde39f742e9ac28c4e5ccde1638
+    parentId: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    modified: 1650850558710
+    created: 1650848249172
+    url: "{{ _.baseUrl }}/api/sheets"
+    name: store
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: Emagrecimento (Treino 2) - Semana 01
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: instructions
+          value: Escolher dois dias da semana, intercalar com o treino 1. Caminhar 20 min
+            após o treino.
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: place
+          value: Casa
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: sheet_level_id
+          value: "2"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+    authentication: {}
+    metaSortKey: -1648812588362
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fd002375b1624dac8517cb0181fcea44
+    parentId: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    modified: 1650848584421
+    created: 1650848576487
+    url: "{{ _.baseUrl }}/api/sheets/1"
+    name: show
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_ff5b9b391f6a43459b01850523e61ff7
+        name: sheet_level
+        value: intermediário
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1648812588312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a02d1ddae5744d3e8f653becbb660ba4
+    parentId: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    modified: 1650849340115
+    created: 1650848621249
+    url: "{{ _.baseUrl }}/api/sheets/1"
+    name: update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: ""
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: instructions
+          value: ""
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: place
+          value: ""
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: sheet_level_id
+          value: ""
+          description: ""
+    parameters:
+      - id: pair_583ec8cfab1349b6932bf27236f81603
+        name: _method
+        value: PUT
+        description: ""
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+      - id: pair_b06518ad4139475f8c7ed9a42079d205
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1648430901938.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b3323a6282954374b46ccf95dd33663e
+    parentId: fld_d131b0fd419f40dc8d4b4d9ba52e03d6
+    modified: 1650848692090
+    created: 1650848685975
+    url: "{{ _.baseUrl }}/api/sheets/1"
+    name: destroy
+    description: ""
+    method: DELETE
+    body: {}
+    parameters:
+      - id: pair_ff5b9b391f6a43459b01850523e61ff7
+        name: sheet_level
+        value: intermediário
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1648430901888.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_29e7c86efb174f169e3341402921e6f7
+    parentId: fld_e68e27415a5e4026b93fa70950c145a1
+    modified: 1650851851149
+    created: 1650848755973
+    url: "{{ _.baseUrl }}/api/series"
+    name: index
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e00490488f514d91b3db0ce87179f74e
+        name: sheet_id
+        value: "3"
+        description: ""
+        disabled: false
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755973
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_e68e27415a5e4026b93fa70950c145a1
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650848974587
+    created: 1650848752718
+    name: series
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650848752718
+    _type: request_group
+  - _id: req_75b862bf2dd04bde9b17d9b1c3aeb25a
+    parentId: fld_e68e27415a5e4026b93fa70950c145a1
+    modified: 1650850847688
+    created: 1650848850567
+    url: "{{ _.baseUrl }}/api/series"
+    name: store
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: Série 03
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: instructions
+          value: Fazer na maior intensidade possível
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: repetitions
+          value: de 3 a 4 vezes
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: sheet_id
+          value: "5"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+    authentication: {}
+    metaSortKey: -1650848755923
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_293838d5a2a2478cb72767401e56e5a2
+    parentId: fld_e68e27415a5e4026b93fa70950c145a1
+    modified: 1650852719279
+    created: 1650848920438
+    url: "{{ _.baseUrl }}/api/series/5"
+    name: show
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_ff5b9b391f6a43459b01850523e61ff7
+        name: sheet_level
+        value: intermediário
+        description: ""
+        disabled: true
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755873
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_eb897b65a8a44509b6ca51069e794866
+    parentId: fld_e68e27415a5e4026b93fa70950c145a1
+    modified: 1650849344829
+    created: 1650848934930
+    url: "{{ _.baseUrl }}/api/series"
+    name: update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: ""
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: instructions
+          value: ""
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: repetitions
+          value: ""
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: sheet_id
+          value: ""
+          description: ""
+    parameters:
+      - id: pair_5d47e86bc3db45018971a9b3b873ab22
+        name: _method
+        value: PUT
+        description: ""
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+      - id: pair_c4c7dbc836af4afb8dcbe012d594eb40
+        name: ""
+        value: ""
+        description: ""
+    authentication: {}
+    metaSortKey: -1650848755823
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_eb8d0f841cd04ab596fff2383ffa21a8
+    parentId: fld_e68e27415a5e4026b93fa70950c145a1
+    modified: 1650849851091
+    created: 1650848954119
+    url: "{{ _.baseUrl }}/api/series/1"
+    name: destroy
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755773
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5f033c2e13394d35b16c4da5a1a358d8
+    parentId: fld_7b9263c9204640619cc0be9aed050b79
+    modified: 1650849272003
+    created: 1650849265247
+    url: "{{ _.baseUrl }}/api/exercises"
+    name: index
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e00490488f514d91b3db0ce87179f74e
+        name: sheet_id
+        value: "3"
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755948
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_7b9263c9204640619cc0be9aed050b79
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650849879042
+    created: 1650849255144
+    name: exercises
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650848752668
+    _type: request_group
+  - _id: req_b3ed96831e554d728acb25926cea8d6f
+    parentId: fld_7b9263c9204640619cc0be9aed050b79
+    modified: 1650852498793
+    created: 1650849287272
+    url: "{{ _.baseUrl }}/api/exercises"
+    name: store
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: Gluteos caneleira caseira
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: instructions
+          value: Se for mulher. Cada lado.
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: repetitions
+          value: 15 vezes
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: serie_id
+          value: "21"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+      - id: pair_e3f2409c7faa452d878c3ae41f3827c0
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1650848755941.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bbb36c8059b44ff8b03e3376e9f80db0
+    parentId: fld_7b9263c9204640619cc0be9aed050b79
+    modified: 1650852247001
+    created: 1650849275655
+    url: "{{ _.baseUrl }}/api/exercises/21"
+    name: show
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e00490488f514d91b3db0ce87179f74e
+        name: sheet_id
+        value: "3"
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755935.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_54c2b20945fd4112a1a451b8fb30ea37
+    parentId: fld_7b9263c9204640619cc0be9aed050b79
+    modified: 1650852527405
+    created: 1650849829472
+    url: "{{ _.baseUrl }}/api/exercises/21"
+    name: update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_332363f2702a45608efe5aebb1efd70c
+          name: title
+          value: Elevação lateral com garrafasde 1,5L
+          description: ""
+        - id: pair_0e339cb852214df08f4e86c7046f6337
+          name: instructions
+          value: pode ser com halteres ou elástico
+          description: ""
+        - id: pair_0b3fbe48a68845e5825b1abdca94bbdc
+          name: repetitions
+          value: 15 vezes
+          description: ""
+        - id: pair_2d0a1ad0581646b18c9e0840bd23e57a
+          name: serie_id
+          value: "17"
+          description: ""
+    parameters:
+      - id: pair_552e5be5835f4c79a440b7d57e7e10ee
+        name: _method
+        value: PUT
+        description: ""
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7be0ab50cf534ae08cdbd9045088e9fe
+    authentication: {}
+    metaSortKey: -1650848755885.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0308b5fc326b417b82bf4021b46ebe5f
+    parentId: fld_7b9263c9204640619cc0be9aed050b79
+    modified: 1650851871558
+    created: 1650849858988
+    url: "{{ _.baseUrl }}/api/exercises/11"
+    name: destroy
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1650848755835.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_8d576f2f19869d40cb1c7f87bd87767c48c574b9
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650848171737
+    created: 1650848169194
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1650848169194
+    _type: environment
+  - _id: jar_8d576f2f19869d40cb1c7f87bd87767c48c574b9
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650848169196
+    created: 1650848169196
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_d74652a8435441aaa6791297d220f8a9
+    parentId: wrk_e6b09a296e2b4da4bd9c89c84ee224f4
+    modified: 1650848169188
+    created: 1650848169188
+    fileName: apiDesafio
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_6e0f74295dcf45a5bb09809a3014b4f5
+    parentId: env_8d576f2f19869d40cb1c7f87bd87767c48c574b9
+    modified: 1650848395578
+    created: 1650848174741
+    name: Global
+    data:
+      baseUrl: apidesafio.voceemforma.net
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1650848174741
+    _type: environment
+  - _id: env_192b251604fc41299ad5bd7043caf848
+    parentId: env_8d576f2f19869d40cb1c7f87bd87767c48c574b9
+    modified: 1650848397750
+    created: 1650848181383
+    name: Local
+    data:
+      baseUrl: http://127.0.0.1:8000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1650848181383
+    _type: environment
