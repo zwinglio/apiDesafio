@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('sheet_levels', SheetLevelsController::class);
 Route::apiResource('sheets', SheetController::class);
-Route::apiResource('series', SerieController::class);
-Route::apiResource('exercises', ExerciseController::class);
+Route::apiResource('sheets/{sheet}/series', SerieController::class);
+Route::apiResource('sheets/{sheet}/series/{serie}/exercises', ExerciseController::class);
