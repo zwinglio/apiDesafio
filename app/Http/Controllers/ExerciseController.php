@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Serie;
+use App\Models\Sheet;
 use App\Models\Exercise;
 use Illuminate\Http\Request;
 use App\Http\Resources\ExerciseResource;
@@ -15,11 +17,9 @@ class ExerciseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Sheet $sheet, Serie $serie)
     {
-        $exercises = Exercise::with('serie')->orderBy('id')->paginate(10);
-
-        return new ExerciseCollection($exercises);
+        return new ExerciseCollection($serie->exercises);
     }
 
     /**
@@ -28,9 +28,15 @@ class ExerciseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreExerciseRequest $request)
+    public function store(StoreExerciseRequest $request, Sheet $sheet, Serie $serie)
     {
-        $exercise = Exercise::create($request->all());
+        $exercise = Exercise::create([
+            'title' => $request->title,
+            'instructions' => $request->instructions,
+            'repetitions' => $request->repetitions,
+            'serie_id' => $serie->id,
+            'order' => $serie->exercises->count() + 1,
+        ]);
 
         return response()->json([
             'message' => 'Exercise created successfully!',
