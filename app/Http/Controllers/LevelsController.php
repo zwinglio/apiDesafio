@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSheetLevelsRequest;
-use App\Http\Resources\SheetLevelsCollection;
-use App\Http\Resources\SheetLevelsResource;
+use App\Http\Resources\LevelCollection;
+use App\Http\Resources\LevelResource;
 use App\Models\Level;
 use Illuminate\Http\Request;
 
@@ -19,7 +19,7 @@ class LevelsController extends Controller
     {
         $sheetLevels = Level::all()->sortBy('id');
 
-        return new SheetLevelsCollection($sheetLevels);
+        return new LevelCollection($sheetLevels);
     }
 
     /**
@@ -34,7 +34,7 @@ class LevelsController extends Controller
 
         return response()->json([
             'message' => 'SheetLevels created successfully!',
-            'data' => new SheetLevelsResource($sheetLevels),
+            'data' => new LevelResource($sheetLevels),
         ], 201);
     }
 
@@ -62,7 +62,7 @@ class LevelsController extends Controller
 
         return response()->json([
             'message' => 'SheetLevels updated successfully!',
-            'data' => new SheetLevelsResource($sheet_level),
+            'data' => new LevelResource($sheet_level),
         ], 200);
     }
 
@@ -78,7 +78,7 @@ class LevelsController extends Controller
 
         return response()->json([
             'message' => 'SheetLevels deleted successfully!',
-            'data' => new SheetLevelsResource($sheet_level),
+            'data' => new LevelResource($sheet_level),
         ], 200);
     }
 }
