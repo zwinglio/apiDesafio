@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('sheets', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('week_id')->constrained();
+            $table->integer('week');
             $table->text('instructions')->nullable();
             $table->foreignId('level_id')->constrained();
             $table->string('place');
