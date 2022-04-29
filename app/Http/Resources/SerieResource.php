@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Exercise;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SerieResource extends JsonResource
@@ -20,7 +21,9 @@ class SerieResource extends JsonResource
             'instructions' => $this->instructions,
             'repetitions' => $this->repetitions,
             'sheet' => new SheetResource($this->whenLoaded('sheet')),
-            'exercises' => new ExerciseCollection($this->whenLoaded('exercises')->sortBy('id')),
+            'exercises' => ExerciseResource::collection(
+                Exercise::where('serie_id', $this->id)->get()
+            ),
         ];
     }
 }

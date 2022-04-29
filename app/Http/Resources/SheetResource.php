@@ -24,9 +24,6 @@ class SheetResource extends JsonResource
             'week' => $this->week,
             'level' => new LevelResource($this->whenLoaded('level')),
             'series' => SerieResource::collection($this->whenLoaded('series')),
-            'exercises' => ExerciseResource::collection(
-                Serie::where('sheet_id', $this->id)->get()->pluck('exercises')->collapse()
-            ),
         ];
     }
 }
