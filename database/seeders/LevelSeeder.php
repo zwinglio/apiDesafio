@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\SheetLevels;
+use App\Models\Level;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SheetLevelsSeeder extends Seeder
+class LevelSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +15,12 @@ class SheetLevelsSeeder extends Seeder
      */
     public function run()
     {
-        SheetLevels::make([
+        Level::make([
             'name' => 'Iniciante',
         ])->save();
 
-        SheetLevels::make([
-            'name' => 'Intermediário',
-        ])->save();
-        
-        SheetLevels::make([
-            'name' => 'Avançado',
+        Level::make([
+            'name' => 'Intermediário/Avançado',
         ])->save();
     }
 }
