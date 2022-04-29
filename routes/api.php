@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SerieController;
 use App\Http\Controllers\SheetController;
 use App\Http\Controllers\ExerciseController;
-use App\Http\Controllers\SheetLevelsController;
+use App\Http\Controllers\LevelsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('sheet_levels', SheetLevelsController::class);
+Route::apiResource('levels', LevelsController::class);
 Route::apiResource('sheets', SheetController::class);
 Route::apiResource('sheets/{sheet}/series', SerieController::class);
 Route::apiResource('sheets/{sheet}/series/{serie}/exercises', ExerciseController::class);

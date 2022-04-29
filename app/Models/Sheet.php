@@ -19,7 +19,7 @@ class Sheet extends Model
         'week'
     ];
 
-    public function Level()
+    public function level()
     {
         return $this->belongsTo(Level::class);
     }

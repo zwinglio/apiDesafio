@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSheetLevelsRequest;
 use App\Http\Resources\SheetLevelsCollection;
 use App\Http\Resources\SheetLevelsResource;
-use App\Models\SheetLevels;
+use App\Models\Level;
 use Illuminate\Http\Request;
 
-class SheetLevelsController extends Controller
+class LevelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class SheetLevelsController extends Controller
      */
     public function index()
     {
-        $sheetLevels = SheetLevels::all()->sortBy('id');
+        $sheetLevels = Level::all()->sortBy('id');
 
         return new SheetLevelsCollection($sheetLevels);
     }
@@ -30,7 +30,7 @@ class SheetLevelsController extends Controller
      */
     public function store(StoreSheetLevelsRequest $request)
     {
-        $sheetLevels = SheetLevels::create($request->all());
+        $sheetLevels = Level::create($request->all());
 
         return response()->json([
             'message' => 'SheetLevels created successfully!',
@@ -44,9 +44,9 @@ class SheetLevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SheetLevels $sheet_level)
+    public function show(Level $sheet_level)
     {
-        return new SheetLevelsResource($sheet_level);
+        return new LevelResource($sheet_level);
     }
 
     /**
@@ -56,7 +56,7 @@ class SheetLevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreSheetLevelsRequest $request, SheetLevels $sheet_level)
+    public function update(StoreSheetLevelsRequest $request, Level $sheet_level)
     {
         $sheet_level->update($request->all());
 
@@ -72,7 +72,7 @@ class SheetLevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SheetLevels $sheet_level)
+    public function destroy(Level $sheet_level)
     {
         $sheet_level->delete();
 
