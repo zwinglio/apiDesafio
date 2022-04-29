@@ -16,6 +16,7 @@ class Sheet extends Model
         'instructions',
         'level_id',
         'place',
+        'week'
     ];
 
     public function Level()
