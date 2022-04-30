@@ -50,9 +50,9 @@ class ExerciseController extends Controller
      * @param  \App\Models\Exercise  $exercise
      * @return \Illuminate\Http\Response
      */
-    public function show(Exercise $exercise)
+    public function show(Sheet $sheet, Serie $serie, Exercise $exercise)
     {
-        $exercise = Exercise::with('serie')->findOrFail($exercise->id);
+        $exercise = $serie->exercises()->findOrFail($exercise->id);
 
         return new ExerciseResource($exercise);
     }

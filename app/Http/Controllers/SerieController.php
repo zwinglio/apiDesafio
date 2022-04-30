@@ -50,7 +50,7 @@ class SerieController extends Controller
      */
     public function show(Sheet $sheet, Serie $series)
     {
-        $series = Serie::where('id', $series->id)->first();
+        $series = $sheet->series()->findOrFail($series->id);
         return new SerieResource($series);
     }
 
