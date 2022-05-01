@@ -26,8 +26,8 @@ class SheetController extends Controller
                 ->firstOrFail()
                 ->id;
 
-            $sheets = Sheet::with(['series', 'sheetLevel'])
-                ->where('sheet_level_id', $sheetLevelId)
+            $sheets = Sheet::with(['series', 'level'])
+                ->where('level_id', $sheetLevelId)
                 ->paginate(10);
         } else {
             $sheets = Sheet::with(['series', 'level'])->orderBy('id')->paginate(10);
