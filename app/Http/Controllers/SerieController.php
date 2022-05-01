@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Serie;
+use App\Models\Sheet;
 use Illuminate\Http\Request;
 use App\Http\Resources\SerieResource;
 use App\Http\Resources\SerieCollection;
@@ -15,20 +16,9 @@ class SerieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Sheet $sheet)
     {
-        if (request()->has('sheet_id')) {
-            $series = Serie::with(['sheet', 'exercises'])
-                ->where('sheet_id', request()->sheet_id)
-                ->orderBy('id')
-                ->paginate();
-        } else {
-            $series = Serie::with(['sheet', 'exercises'])
-                ->orderBy('id')
-                ->paginate();
-        }
-
-        return new SerieCollection($series);
+        return new SerieCollection($sheet->series);
     }
 
     /**
@@ -37,9 +27,14 @@ class SerieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSerieRequest $request)
+    public function store(Sheet $sheet, StoreSerieRequest $request)
     {
-        $serie = Serie::create($request->all());
+        $serie = Serie::create([
+            'title' => $request->get('title'),
+            'instructions' => $request->get('instructions'),
+            'repetitions' => $request->get('repetitions'),
+            'sheet_id' => $sheet->id,
+        ]);
 
         return response()->json([
             'message' => 'Serie created successfully!',
@@ -53,10 +48,10 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function show(Serie $series)
+    public function show(Sheet $sheet, Serie $series)
     {
-        $serie = Serie::with(['sheet', 'exercises'])->findOrFail($series->id);
-        return new SerieResource($serie);
+        $series = $sheet->series()->findOrFail($series->id);
+        return new SerieResource($series);
     }
 
     /**
@@ -66,14 +61,13 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreSerieRequest $request, Serie $series)
+    public function update(StoreSerieRequest $request, Sheet $sheet, Serie $series)
     {
-        $serie = Serie::findOrFail($series->id);
-        $serie->update($request->all());
+        $series->update($request->all());
 
         return response()->json([
             'message' => 'Serie updated successfully!',
-            'data' => new SerieResource($serie),
+            'data' => new SerieResource($series),
         ], 200);
     }
 
@@ -83,7 +77,7 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Serie $series)
+    public function destroy(Sheet $sheet, Serie $series)
     {
         $series->delete();
         return response()->json([

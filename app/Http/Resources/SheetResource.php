@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Serie;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SheetResource extends JsonResource
@@ -19,8 +20,9 @@ class SheetResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'instructions' => $this->instructions,
-            'sheet_level' => new SheetLevelsResource($this->whenLoaded('sheetLevel')),
             'place' => $this->place,
+            'week' => $this->week,
+            'level' => new LevelResource($this->whenLoaded('level')),
             'series' => SerieResource::collection($this->whenLoaded('series')),
         ];
     }

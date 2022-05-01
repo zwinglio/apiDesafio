@@ -25,9 +25,10 @@ class StoreSheetRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'instructions' => 'max:255',
-            'sheet_level_id' => 'required|exists:sheet_levels,id',
+            'instructions' => 'nullable|string|max:255',
             'place' => 'required|max:255',
+            'level_id' => 'required|exists:levels,id',
+            'week' => 'required|integer',
         ];
     }
 }

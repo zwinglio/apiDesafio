@@ -14,13 +14,14 @@ class Sheet extends Model
     protected $fillable = [
         'title',
         'instructions',
-        'sheet_level_id',
+        'level_id',
         'place',
+        'week'
     ];
 
-    public function sheetLevel()
+    public function level()
     {
-        return $this->belongsTo(SheetLevels::class);
+        return $this->belongsTo(Level::class);
     }
 
     public function series()

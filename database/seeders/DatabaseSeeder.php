@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(SheetLevelsSeeder::class);
-        $this->call(SheetSeeder::class);
-        $this->call(SerieSeeder::class);
-        $this->call(ExerciseSeeder::class);
+        $this->call(LevelSeeder::class);
+        // $this->call(SheetSeeder::class);
+        // $this->call(SerieSeeder::class);
+        // $this->call(ExerciseSeeder::class);
         // \App\Models\User::factory(10)->create();
         // \App\Models\SheetLevels::factory(10)->create();
     }

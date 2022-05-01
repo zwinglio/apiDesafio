@@ -16,6 +16,7 @@ class Exercise extends Model
         'title',
         'instructions',
         'repetitions',
+        'order'
     ];
 
     public function serie()

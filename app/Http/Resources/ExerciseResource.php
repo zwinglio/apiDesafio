@@ -19,6 +19,7 @@ class ExerciseResource extends JsonResource
             'title' => $this->title,
             'instructions' => $this->instructions,
             'repetitions' => $this->repetitions,
+            'order' => $this->order,
             'serie' => new SerieResource($this->whenLoaded('serie')),
         ];
     }

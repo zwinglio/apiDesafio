@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sheet;
-use App\Models\SheetLevels;
+use App\Models\Level;
 use Illuminate\Http\Request;
 use App\Http\Resources\SheetResource;
 use App\Http\Resources\SheetCollection;
@@ -22,7 +22,7 @@ class SheetController extends Controller
             $sheetLevel = request()
                 ->get('sheet_level');
 
-            $sheetLevelId = SheetLevels::where('name', 'ilike', $sheetLevel)
+            $sheetLevelId = Level::where('name', 'ilike', $sheetLevel)
                 ->firstOrFail()
                 ->id;
 
@@ -30,7 +30,7 @@ class SheetController extends Controller
                 ->where('sheet_level_id', $sheetLevelId)
                 ->paginate(10);
         } else {
-            $sheets = Sheet::with(['series', 'sheetLevel'])->orderBy('id')->paginate(10);
+            $sheets = Sheet::with(['series', 'level'])->orderBy('id')->paginate(10);
         }
 
         return new SheetCollection($sheets);
@@ -60,6 +60,7 @@ class SheetController extends Controller
      */
     public function show(Sheet $sheet)
     {
+        $sheet = Sheet::with(['level', 'series'])->findOrFail($sheet->id);
         return new SheetResource($sheet);
     }
 

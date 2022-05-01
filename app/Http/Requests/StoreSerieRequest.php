@@ -25,8 +25,7 @@ class StoreSerieRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'sheet_id' => 'required|integer|exists:sheets,id',
-            'instructions' => 'string|max:255',
+            'instructions' => 'nullable|string|max:255',
             'repetitions' => 'string|max:255',
         ];
     }

@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SheetLevelsResource extends JsonResource
+class LevelResource extends JsonResource
 {
     public static $wrap = 'sheet_level';
     /**
