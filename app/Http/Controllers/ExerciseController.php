@@ -64,7 +64,7 @@ class ExerciseController extends Controller
      * @param  \App\Models\Exercise  $exercise
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreExerciseRequest $request, Exercise $exercise)
+    public function update(StoreExerciseRequest $request, Sheet $sheet, Serie $serie, Exercise $exercise)
     {
         $exercise->update($request->all());
 
@@ -80,7 +80,7 @@ class ExerciseController extends Controller
      * @param  \App\Models\Exercise  $exercise
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Exercise $exercise)
+    public function destroy(Sheet $sheet, Serie $serie, Exercise $exercise)
     {
         $exercise->delete();
 
