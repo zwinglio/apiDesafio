@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sheet;
 use App\Models\Level;
+use App\Models\Sheet;
+use App\Imports\SheetImport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Resources\SheetResource;
 use App\Http\Resources\SheetCollection;
 use App\Http\Requests\StoreSheetRequest;
@@ -93,6 +95,17 @@ class SheetController extends Controller
 
         return response()->json([
             'message' => 'Sheet deleted successfully!',
+        ], 200);
+    }
+
+    public function importSheets(Request $request)
+    {
+        $sheetsExcel = $request->file('sheets');
+
+        Excel::import(new SheetImport, $sheetsExcel);
+
+        return response()->json([
+            'message' => 'Sheets imported successfully!',
         ], 200);
     }
 }
