@@ -26,3 +26,5 @@ Route::apiResource('levels', LevelsController::class);
 Route::apiResource('sheets', SheetController::class);
 Route::apiResource('sheets/{sheet}/series', SerieController::class);
 Route::apiResource('sheets/{sheet}/series/{serie}/exercises', ExerciseController::class);
+
+Route::post('sheets/import', [SheetController::class, 'importSheets']);
