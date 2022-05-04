@@ -20,7 +20,11 @@ class LevelSeeder extends Seeder
         ])->save();
 
         Level::make([
-            'name' => 'Intermediário/Avançado',
+            'name' => 'Intermediário',
+        ])->save();
+
+        Level::make([
+            'name' => 'Avançado',
         ])->save();
     }
 }
